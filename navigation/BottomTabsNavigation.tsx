@@ -5,6 +5,7 @@ import { TabButton } from '../components/bottomTab/BottomTab';
 import { SavedItemsScreen } from '../screens/public_screens/SavedItemsScreen';
 import { NotificationsScreen } from '../screens/public_screens/NotificationsScreen';
 import { ProfileScreen } from '../screens/public_screens/ProfileScreen';
+import { HomeScreenIcon, NotificationsScreenIcon, ProfileScreenIcon, SavedScreenIcon } from '../assets/icons/bottomMenuIcons';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +27,7 @@ export const BottomTabsNavigation = () => {
         component={HomeScreen} 
         options={{
           unmountOnBlur: true,
-          tabBarButton: (props) => <TabButton {...props} tabTitle={'Головна'}/>
+          tabBarButton: (props) => <TabButton {...props} itemIcon={HomeScreenIcon} tabTitle={'Головна'}/>
         }}
       />
 
@@ -35,7 +36,7 @@ export const BottomTabsNavigation = () => {
         component={SavedItemsScreen} 
         options={{
           unmountOnBlur: true,
-          tabBarButton: (props) => <TabButton {...props} tabTitle={'Saved Items'}/>
+          tabBarButton: (props) => <TabButton {...props} itemIcon={SavedScreenIcon} tabTitle={'Saved Items'}/>
         }}
       />
 
@@ -44,7 +45,7 @@ export const BottomTabsNavigation = () => {
         component={NotificationsScreen} 
         options={{
           unmountOnBlur: true,
-          tabBarButton: (props) => <TabButton {...props} tabTitle={'Notifications'}/>
+          tabBarButton: (props) => <TabButton {...props} itemIcon={NotificationsScreenIcon} tabTitle={'Notifications'}/>
         }}
       />
 
@@ -53,7 +54,7 @@ export const BottomTabsNavigation = () => {
         component={ProfileScreen} 
         options={{
           unmountOnBlur: true,
-          tabBarButton: (props) => <TabButton {...props} tabTitle={'Profile'}/>
+          tabBarButton: (props) => <TabButton {...props} itemIcon={ProfileScreenIcon} tabTitle={'Profile'}/>
         }}
       />
     </Tab.Navigator>

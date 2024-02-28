@@ -3,6 +3,7 @@ import * as Animatable from 'react-native-animatable';
 import { StyleSheet ,TouchableOpacity, Text } from "react-native";
 import { colors } from "../../config/theme_config";
 import { ThemeContext } from "../../store/theme-context";
+import { CustomIcon } from "../../UI/CustomIcon";
 
 export const TabButton: FC<any> = (props) => {
   const {itemIcon, tabTitle, onPress, accessibilityState} = props;
@@ -35,10 +36,10 @@ export const TabButton: FC<any> = (props) => {
         ref={viewRef}
         duration={1000}
       >
-        {/* <CustomIcon iconName={itemIcon} color={activeColors.PrimaryText}/> */}
-        <Text style={[styles.buttonText, {color: '#000'}]}>
+        <CustomIcon iconName={itemIcon} color={'#000'}  width={24} height={24}/>
+        {/* <Text style={[styles.buttonText, {color: '#000'}]}>
           {tabTitle}
-        </Text>
+        </Text> */}
       </Animatable.View>
     </TouchableOpacity>
   )
@@ -55,9 +56,9 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     padding: 8, 
-    paddingHorizontal: 12,
+    paddingHorizontal: 16,
     borderRadius: 8
   },
   buttonText: {

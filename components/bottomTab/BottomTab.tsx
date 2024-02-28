@@ -1,19 +1,17 @@
 import { FC, useRef, useEffect, useContext } from "react";
 import * as Animatable from 'react-native-animatable';
 import { StyleSheet ,TouchableOpacity, Text } from "react-native";
-
-// import { ThemeContext } from "../../store/theme-context";
-// import { CustomIcon } from "../Icon/CustomIcon";
-// import { colors } from "../../config/theme";
+import { colors } from "../../config/theme_config";
+import { ThemeContext } from "../../store/theme-context";
 
 export const TabButton: FC<any> = (props) => {
   const {itemIcon, tabTitle, onPress, accessibilityState} = props;
   const focused = accessibilityState.selected;
 
-  const viewRef = useRef<any>(null)
+  const {theme} = useContext(ThemeContext);
+  const activeColors = colors[theme.mode]
 
-  // const {theme} = useContext(ThemeContext);
-  // const activeColors = colors[theme.mode];
+  const viewRef = useRef<any>(null)
 
   useEffect(() => {
     if (focused) {

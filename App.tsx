@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavContainer } from './navigation/NavContainer';
+import { ThemeContextPropvider } from './store/theme-context';
 
 
 export default function App() {
   return (
-
-    <NavContainer />
+    <ThemeContextPropvider>
+      <NavContainer />
+    </ThemeContextPropvider>
   );
 }
 

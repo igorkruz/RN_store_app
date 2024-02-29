@@ -16,9 +16,13 @@ export const BottomTabsNavigation = () => {
       headerShown: false,
       tabBarStyle: {
         height: Platform.OS === 'android' ? 74 : 110,
-        borderColor: '#fff',
+        borderColor: 'red',
         elevation: 0,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        position: 'absolute',
+        bottom: 30,
+        marginHorizontal: 20,
+        borderRadius: 30
       }
     }}>
     

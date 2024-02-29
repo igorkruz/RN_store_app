@@ -1,6 +1,6 @@
 import { FC, useRef, useEffect, useContext } from "react";
 import * as Animatable from 'react-native-animatable';
-import { StyleSheet ,TouchableOpacity, Text } from "react-native";
+import { StyleSheet ,TouchableOpacity, Text, View } from "react-native";
 import { colors } from "../../config/theme_config";
 import { ThemeContext } from "../../store/theme-context";
 import { CustomIcon } from "../../UI/CustomIcon";
@@ -29,18 +29,18 @@ export const TabButton: FC<any> = (props) => {
       style={styles.bottomMenuContainer}
     > 
       <Animatable.View 
-        style={[
-          styles.buttonContainer, 
-          {backgroundColor: focused ? '#ccc' : 'transparent'}
-        ]} 
+        style={[ styles.buttonContainer ]} 
         ref={viewRef}
         duration={1000}
       >
-        <CustomIcon iconName={itemIcon} color={'#000'}  width={24} height={24}/>
-        {/* <Text style={[styles.buttonText, {color: '#000'}]}>
-          {tabTitle}
-        </Text> */}
+        <CustomIcon iconName={itemIcon} color={ focused ? '#000' : '#838383'}  width={24} height={24}/>
+
+        <Animatable.View ref={viewRef} style={[focused && styles.buttonContainerAfter, !focused && styles.buttonContainerAfterNotFocused]}>
+        </Animatable.View>
       </Animatable.View>
+
+      <View style={[focused && styles.buttonContainerAfterCircle, !focused && styles.buttonContainerAfterCircleNotFocused]}>
+      </View>
     </TouchableOpacity>
   )
 }
@@ -51,15 +51,40 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 8
+    overflow: 'hidden'
   },
   buttonContainer: {
+    position: 'relative',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 8, 
-    paddingHorizontal: 16,
-    borderRadius: 8
+    paddingHorizontal: 15
+  },
+  buttonContainerAfter: {
+    position: 'absolute',
+    top: -32,
+    width: '100%',
+    height: 50,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 30,
+    borderBottomEndRadius: 50,
+    borderBottomStartRadius: 50,
+    
+    backgroundColor: '#000'
+  },
+  buttonContainerAfterNotFocused: {
+    opacity: 0
+  },
+  buttonContainerAfterCircle: {
+    position: 'absolute',
+    top: 8,
+    width: 5,
+    height: 5,
+    backgroundColor: '#fff',
+    borderRadius: 50
+  },
+  buttonContainerAfterCircleNotFocused: {
+    opacity: 0
   },
   buttonText: {
     fontSize: 12,

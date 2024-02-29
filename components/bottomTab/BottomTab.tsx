@@ -1,6 +1,6 @@
 import { FC, useRef, useEffect, useContext } from "react";
 import * as Animatable from 'react-native-animatable';
-import { StyleSheet ,TouchableOpacity, Text, View } from "react-native";
+import { StyleSheet ,TouchableOpacity, View } from "react-native";
 import { colors } from "../../config/theme_config";
 import { ThemeContext } from "../../store/theme-context";
 import { CustomIcon } from "../../UI/CustomIcon";
@@ -44,7 +44,6 @@ export const TabButton: FC<any> = (props) => {
     </TouchableOpacity>
   )
 }
-
 
 const styles = StyleSheet.create({
   bottomMenuContainer: {

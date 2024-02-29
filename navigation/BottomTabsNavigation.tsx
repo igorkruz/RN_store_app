@@ -23,7 +23,7 @@ export const BottomTabsNavigation = () => {
         // position: 'absolute',
         // bottom: 30,
         // marginHorizontal: 20,
-      }
+      },
     }}>
     
       <Tab.Screen 

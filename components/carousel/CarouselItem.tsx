@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { View, Image, Text, Pressable } from "react-native";
+import { View, Image, Text, Pressable, StyleSheet } from "react-native";
 
 interface Carousels {
   item: any;
@@ -8,23 +8,23 @@ interface Carousels {
 
 export const CarouselItem:FC<Carousels> = ({ item, index }) => {
   return (
-    <View key={index} style={{borderRadius: 16,position: 'relative', height: 180, backgroundColor: '#ccc' }}>
-      <View style={{position: 'absolute', top: 50, left: 20, justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={{color: '#202727', fontSize: 24, fontWeight: '700', textAlign:'center'}}>
+    <View key={index} style={styles.cardContainer}>
+      <View style={styles.textContainer}>
+        <Text style={styles.textTitle}>
          20% Discount
         </Text>
 
-        <Text style={{textAlign:'center', marginBottom: 20}}>
+        <Text style={styles.textSubTitle}>
           on your first purchase
         </Text>
 
-        <Pressable style={{backgroundColor: '#000', paddingHorizontal: 24, paddingVertical: 8, borderRadius: 16}}>
-          <Text style={{color: '#fff'}}>
+        <Pressable style={styles.buttonContainer}>
+          <Text style={styles.buttonText}>
             Shop now
           </Text>
         </Pressable>
       </View>
-      <View style={{height: 150, width: 220, position: 'absolute', right: -20, top: 0, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={styles.imageContainer}>
         <Image
           source={require('../../assets/carouselImages/carouselImage2.png') }
           style={{width: '100%', height: '100%'}}
@@ -34,3 +34,13 @@ export const CarouselItem:FC<Carousels> = ({ item, index }) => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  cardContainer: {borderRadius: 16,position: 'relative', height: 180, backgroundColor: '#ccc' },
+  textContainer: {position: 'absolute', top: 50, left: 20, justifyContent: 'center', alignItems: 'center'},
+  textTitle: {color: '#202727', fontSize: 24, fontWeight: '700', textAlign:'center'},
+  textSubTitle: {textAlign:'center', marginBottom: 20},
+  buttonContainer: {backgroundColor: '#000', paddingHorizontal: 24, paddingVertical: 8, borderRadius: 16},
+  buttonText: {color: '#fff'},
+  imageContainer: {height: 150, width: 220, position: 'absolute', right: -35, top: 0, justifyContent: 'center', alignItems: 'center'},
+})

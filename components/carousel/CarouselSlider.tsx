@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { ScrollView, View, Image } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { useState, useRef } from 'react';
 import { CarouselItem } from './CarouselItem';
@@ -26,21 +26,21 @@ export const CarouselSlider = () => {
   const isCarousel = useRef(null);
 
   return (
-    <View style={{borderColor: 'red', borderWidth :1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={{justifyContent: 'center', alignItems: 'center', borderRadius: 16}}>
       <Carousel
         vertical={false}
         layout="default"
-        layoutCardOffset={9}
+        layoutCardOffset={0}
         ref={isCarousel}
         data={dataCarousel}
         renderItem={CarouselItem}
-        itemWidth={370}
+        itemWidth={350}
         sliderWidth={1000}
         inactiveSlideShift={4}
         inactiveSlideOpacity={0}
         useScrollView={true}
         onSnapToItem={(index) => setIndex(index)}
-        autoplay={true}
+        autoplay={false}
         autoplayDelay={6000}
         autoplayInterval={6000}
       />
@@ -70,5 +70,6 @@ export const CarouselSlider = () => {
         tappableDots={true}
       />
     </View>
+
   )
 }

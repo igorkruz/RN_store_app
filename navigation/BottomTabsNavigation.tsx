@@ -20,9 +20,6 @@ export const BottomTabsNavigation = () => {
         backgroundColor: '#fff',
         elevation: 0,
         borderRadius: 18,
-        // position: 'absolute',
-        // bottom: 30,
-        // marginHorizontal: 20,
       },
     }}>
     

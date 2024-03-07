@@ -21,7 +21,7 @@ export const FilterList = () => {
           onPress={() => setSelectedListItem(item)}
         />
       )}
-      // keyExtractor={(item)=> item}
+      keyExtractor={(item)=> item}
     />
   )
 }

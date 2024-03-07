@@ -49,6 +49,8 @@ export const HomeScreen = () => {
           <View style={{marginBottom: 16}}>
             <FilterList />
           </View>
+
+          <View></View>
         </View>
       </View>
     </>

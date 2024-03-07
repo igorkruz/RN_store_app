@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Pressable, Text } from "react-native"
+import { Pressable, StyleSheet, Text } from "react-native"
 
 interface Props {
   onPress: () => void;
@@ -11,12 +11,12 @@ export const FilterListItem:FC<Props> = ({ onPress, selectedListItem, listItem }
     <Pressable
       onPress={onPress}
       style={[
-        {paddingHorizontal: 25, paddingVertical: 10, borderRadius: 16, justifyContent: 'center', alignItems: 'center'},
+        styles.container,
         selectedListItem === listItem && {backgroundColor: '#000'},
       ]}
     >
       <Text style={[
-          {color: '#9C9C9C'},
+          styles.title,
           selectedListItem === listItem && {color: '#fff'},
         ]}
       >
@@ -25,3 +25,8 @@ export const FilterListItem:FC<Props> = ({ onPress, selectedListItem, listItem }
     </Pressable>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {paddingHorizontal: 25, paddingVertical: 10, borderRadius: 16, justifyContent: 'center', alignItems: 'center'},
+  title: {color: '#9C9C9C'}
+})

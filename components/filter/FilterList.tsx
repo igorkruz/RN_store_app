@@ -6,7 +6,7 @@ import { FilterListItem } from "./FilterListItem"
 const FilterListItems = ['All', 'Running', 'Sneakers', 'Formal', 'Casual']
 
 export const FilterList = () => {
-  const [selectedListItem, setSelectedListItem] = useState('Al')
+  const [selectedListItem, setSelectedListItem] = useState('All')
 
   return (
      <FlatList

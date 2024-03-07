@@ -27,6 +27,14 @@ export const FilterListItem:FC<Props> = ({ onPress, selectedListItem, listItem }
 }
 
 const styles = StyleSheet.create({
-  container: {paddingHorizontal: 25, paddingVertical: 10, borderRadius: 16, justifyContent: 'center', alignItems: 'center'},
-  title: {color: '#9C9C9C'}
+  container: {
+    paddingHorizontal: 25, 
+    paddingVertical: 10, 
+    borderRadius: 16, 
+    justifyContent: 'center', 
+    alignItems: 'center'
+  },
+  title: {
+    color: '#9C9C9C'
+  }
 })

@@ -1,11 +1,12 @@
-import { View, Text, Image } from "react-native"
+import { View, Text, Image, ScrollView } from "react-native"
 import { StatusBar } from "expo-status-bar"
 import { MainButton } from "../../UI/MainButton"
-import { MenuIcon, ShoopingBagIcon } from "../../assets/icons/buttonIcons"
+import { GoForwardIcon, MenuIcon, ShoopingBagIcon } from "../../assets/icons/buttonIcons"
 
 import { FC, useRef, useState } from "react";
 import { CarouselSlider } from "../../components/carousel/CarouselSlider";
 import { FilterList } from "../../components/filter/FilterList";
+import { HomePageProductList } from "../../components/productsList/HomePageProductList";
 
 
 
@@ -42,15 +43,18 @@ export const HomeScreen = () => {
             />
           </View>
 
-          <View style={{marginBottom: 16}}>
-            <CarouselSlider />
-          </View>
+          <ScrollView contentContainerStyle={{paddingBottom: 100}} showsVerticalScrollIndicator={false}>
+            <View style={{marginBottom: 16}}>
+              <CarouselSlider />
+            </View>
 
-          <View style={{marginBottom: 16}}>
-            <FilterList />
-          </View>
+            <View style={{marginBottom: 16}}>
+              <FilterList />
+            </View>
 
-          <View></View>
+            <HomePageProductList />
+          </ScrollView>
+
         </View>
       </View>
     </>

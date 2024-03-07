@@ -36,7 +36,7 @@ export const CarouselItem:FC<Carousels> = ({ item, index }) => {
 }
 
 const styles = StyleSheet.create({
-  cardContainer: {borderRadius: 16,position: 'relative', height: 180, backgroundColor: '#ccc' },
+  cardContainer: {borderRadius: 16,position: 'relative', height: 180, backgroundColor: '#EFEFEF' },
   textContainer: {position: 'absolute', top: 50, left: 20, justifyContent: 'center', alignItems: 'center'},
   textTitle: {color: '#202727', fontSize: 24, fontWeight: '700', textAlign:'center'},
   textSubTitle: {textAlign:'center', marginBottom: 20},

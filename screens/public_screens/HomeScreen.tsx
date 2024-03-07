@@ -5,6 +5,7 @@ import { MenuIcon, ShoopingBagIcon } from "../../assets/icons/buttonIcons"
 
 import { FC, useRef, useState } from "react";
 import { CarouselSlider } from "../../components/carousel/CarouselSlider";
+import { FilterList } from "../../components/filter/FilterList";
 
 
 
@@ -41,7 +42,13 @@ export const HomeScreen = () => {
             />
           </View>
 
-          <CarouselSlider />
+          <View style={{marginBottom: 16}}>
+            <CarouselSlider />
+          </View>
+
+          <View style={{marginBottom: 16}}>
+            <FilterList />
+          </View>
         </View>
       </View>
     </>
